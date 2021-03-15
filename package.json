@@ -1,0 +1,28 @@
+{
+  "name": "expressjs-api",
+  "version": "1.0.0",
+  "description": "Express - Gradient Project Api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "express",
+    "rest",
+    "api"
+  ],
+  "author": "Muhammet Akbulut, Ibrahim Keleş, Nafiye Buse Soylu",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
