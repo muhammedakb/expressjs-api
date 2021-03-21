@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
-
+const bcrypt = require("bcryptjs");
 const Schema = mongoose.Schema;
+const jwt = require("jsonwebtoken");
 
 const UserSchema = new Schema({
   name: {
@@ -10,7 +11,7 @@ const UserSchema = new Schema({
   email: {
     type: String,
     required: [true, "Please provide a email"],
-    unique: [true, "Please try different email"],
+    unique: true,
     match: [
       /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
       "Please provide a valid email",
@@ -53,5 +54,38 @@ const UserSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("User", UserSchema);
+// UserSchmea Methods
+UserSchema.methods.generateJwtFromUser = function () {
+  const { JWT_SECRET_KEY, JWT_EXPIRE } = process.env;
+  const payload = {
+    id: this._id,
+    name: this.name,
+  };
+  const token = jwt.sign(payload, JWT_SECRET_KEY, {
+    expiresIn: JWT_EXPIRE,
+  });
+  return token;
+};
+
+// Kullanıcı oluşturulmadan hemen önce
+// pre hooks ile password hash işlemini gerçekleştiriyoruz.
+UserSchema.pre("save", function (next) {
+  // Parola değişme
+  if (!this.isModified("password")) {
+    next();
+  }
+
+  //bcryptjs ile password hashleme
+  bcrypt.genSalt(10, (err, salt) => {
+    if (err) next(err);
+    bcrypt.hash(this.password, salt, (err, hash) => {
+      // Store hash in your password DB.
+      if (err) next(err);
+      this.password = hash;
+      next();
+    });
+  });
+});
+
 // users isimli collection oluşacak
+module.exports = mongoose.model("User", UserSchema);
