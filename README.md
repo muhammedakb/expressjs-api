@@ -18,8 +18,6 @@
 - Fotoğrafın veritabanında güncellenmesi
 - Şifremi unuttum için 1 saatlik token oluşturulması
 
-<div style="background:yellow;">
 TODO: NodeMailer ile şifre sıfırlaması
 TODO: Antrenörün bir kullanıcıyı engellemesi(blocked)
 TODO: Antrenörün bir kullanıcıyı silmesi ve bilgilerinin güncellenemesi
-</div>
