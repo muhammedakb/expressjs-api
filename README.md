@@ -1,7 +1,7 @@
-|| Express.js ile "backend api(REST API)" ||
-|| MVC modeline uygun, katmanlı ||
-|| Katmanlar = Yardımcı Fonksiyonlar(helpers), Ara yazılımlar(middlewares),
-   Yönlendirmeler(routes), Kontroller(controllers), Models ||
+|| Express.js ile "backend api(REST API)" ||<br>
+|| MVC modeline uygun, katmanlı ||<br>
+|| Katmanlar = Yardımcı Fonksiyonlar(helpers), Ara yazılımlar(middlewares),Yönlendirmeler(routes), Kontroller(controllers), Models ||
+   
 
 - dotenv paketi ile ortam değişkenleri
 - Mongoose ile MongoDB bağlantısı yapıldı
