@@ -9,7 +9,7 @@ const connectDatabase = () => {
       useUnifiedTopology: true,
     })
     .then(() => {
-      console.log("MongoDB conn successful ^^");
+      console.log("MongoDB conn successful 🔗");
     })
     .catch((err) => {
       console.log(err);
