@@ -6,6 +6,7 @@ const {
   logout,
   imageUpload,
   forgotPassword,
+  resetPassword,
 } = require("../controllers/auth");
 const { getAccessToRoute } = require("../middlewares/authorization/auth");
 const profileImageUpload = require("../middlewares/libraries/profileImageUpload");
@@ -16,6 +17,7 @@ router.post("/login", login);
 router.get("/profile", getAccessToRoute, getUser);
 router.get("/logout", getAccessToRoute, logout);
 router.post("/forgotpassword", forgotPassword);
+router.put("/resetpassword", resetPassword);
 // postman üzerinden çektiğimiz "profile_image"
 router.post(
   "/upload",
