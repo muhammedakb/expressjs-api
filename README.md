@@ -17,7 +17,8 @@
 - Multer(npm) paketi ile fotoğraf yüklenmesi
 - Fotoğrafın veritabanında güncellenmesi
 - Şifremi unuttum için 1 saatlik token oluşturulması
-
-TODO: NodeMailer ile şifre sıfırlaması<br>
-TODO: Antrenörün bir kullanıcıyı engellemesi(blocked)<br>
-TODO: Antrenörün bir kullanıcıyı silmesi ve bilgilerinin güncellenemesi<br>
+- Şifremi unuttum ve şifre sıfırlanması
+- Kullanıcı profili
+- Admin(antrenör) rolünün bir kullanıcıyı engellemesi
+- Admin(antrenör) rolünün bir kullanıcıyı silmesi
+- User(kullanıcı) bilgilerinin güncellenmesi
