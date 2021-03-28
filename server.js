@@ -4,6 +4,7 @@ const connectDatabase = require("./helpers/database/connectDatabase");
 const customErrorHandler = require("./middlewares/errors/customErrorHandler");
 const path = require("path");
 const routers = require("./routers/index");
+const cors = require("cors");
 
 // Environment Variables
 dotenv.config({
@@ -14,6 +15,10 @@ dotenv.config({
 connectDatabase();
 
 const app = express();
+
+// CORS(Access-Control-Allow-Origin)
+app.use(cors());
+
 // Express - Body Middleware
 app.use(express.json());
 
