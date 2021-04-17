@@ -3,23 +3,7 @@ const CustomError = require("../helpers/error/CustomError");
 const asyncErrorWrapper = require("express-async-handler");
 
 const getAllQuestions = asyncErrorWrapper(async (req, res, next) => {
-  let query = Question.find();
-  if (req.query.search) {
-    const searchObject = {};
-    // title searchValue
-    const regex = new RegExp(req.query.search, "i");
-    searchObject["title"] = regex;
-
-    query = query.where(searchObject);
-  }
-  const questions = await query;
-  /*const questions = await Question.find().where({
-    title: "Questions 3 - Title",
-  });*/
-  return res.status(200).json({
-    success: true,
-    data: questions,
-  });
+  return res.status(200).json(res.queryResults);
 });
 
 const getSingleQuestion = asyncErrorWrapper(async (req, res, next) => {
@@ -79,7 +63,7 @@ const likeQuestion = asyncErrorWrapper(async (req, res, next) => {
     return next(new CustomError("You already liked this question", 400));
   }
   question.likes.push(req.user.id);
-
+  question.likeCount = question.likes.length;
   await question.save();
 
   return res.status(200).json({
@@ -100,6 +84,7 @@ const undoLikeQuestion = asyncErrorWrapper(async (req, res, next) => {
   }
   const index = question.likes.indexOf(req.user.id);
   question.likes.splice(index, 1);
+  question.likeCount = question.likes.length;
 
   await question.save();
 
