@@ -7,12 +7,7 @@ const getAllQuestions = asyncErrorWrapper(async (req, res, next) => {
 });
 
 const getSingleQuestion = asyncErrorWrapper(async (req, res, next) => {
-  const { id } = req.params;
-  const question = await Question.findById(id);
-  return res.status(200).json({
-    success: true,
-    data: question,
-  });
+  return res.status(200).json(res.queryResults);
 });
 
 const askNewQuestion = asyncErrorWrapper(async (req, res, next) => {
