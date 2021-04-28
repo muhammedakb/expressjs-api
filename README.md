@@ -22,3 +22,23 @@
 - Admin(antrenör) rolünün bir kullanıcıyı engellemesi
 - Admin(antrenör) rolünün bir kullanıcıyı silmesi
 - User(kullanıcı) bilgilerinin güncellenmesi
+- User ve Admin bilgilerinin tekli getirilmesi
+- User ve Admin bilgilerinin çoklu getirilmesi
+
+- Soru ekleme
+- Soru silme
+- Soru güncelleme
+- Soruları görme
+- Soru (tek) görme
+- Soruya like atma
+- Sorudan like çekme
+- En çok beğenilen soruları listeleme
+
+- cevap ekleme
+- cevap silme
+- cevap güncelleme
+- cevapları görme
+- cevap (tek) görme
+- cevaba like atma
+- cevaptan like çekme
+- En çok beğenilen cevapları listeleme
