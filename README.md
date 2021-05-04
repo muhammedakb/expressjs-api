@@ -25,6 +25,7 @@
 - User ve Admin bilgilerinin tekli getirilmesi
 - User ve Admin bilgilerinin çoklu getirilmesi
 
+
 - Soru ekleme
 - Soru silme
 - Soru güncelleme

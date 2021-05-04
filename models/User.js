@@ -40,6 +40,15 @@ const UserSchema = new Schema({
   about: {
     type: String,
   },
+  age: {
+    type: Number,
+  },
+  gender: {
+    type: String,
+  },
+  foot: {
+    type: String,
+  },
   place: {
     type: String,
   },
