@@ -55,6 +55,16 @@ const UserSchema = new Schema({
   website: {
     type: String,
   },
+  twitter: {
+    type: String,
+  },
+  instagram: {
+    type: String,
+  },
+  phone: {
+    type: Number,
+    minlength: [10, "Please provide a phone number with min length : 10"],
+  },
   profile_image: {
     type: String,
     default: "default.jpg",
