@@ -9,6 +9,7 @@ const User = require("../models/User.js");
 const router = express.Router();
 
 router.get("/", userQueryMiddleware(User), getAllUsers);
+// router.get("/", User, getAllUsers);
 router.get("/:id", checkUserExist, getSingleUser);
 
 module.exports = router;
