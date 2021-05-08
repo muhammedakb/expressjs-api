@@ -49,6 +49,9 @@ const UserSchema = new Schema({
   foot: {
     type: String,
   },
+  position: {
+    type: String,
+  },
   place: {
     type: String,
   },
