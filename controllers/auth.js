@@ -11,13 +11,14 @@ const sendEmail = require("../helpers/libraries/sendEmail");
 const register = asyncErrorWrapper(async (req, res, next) => {
   // Post Data
 
-  const { name, email, password, role } = req.body;
+  const { name, email, password, role, gender } = req.body;
   // async - await
   const user = await User.create({
     name: name,
     email: email,
     password: password,
     role: role,
+    gender: gender,
   });
   sendJwtToClient(user, res);
 });
