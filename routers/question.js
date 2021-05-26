@@ -45,7 +45,7 @@ router.get(
     population: [
       {
         path: "user",
-        select: "name profile_image",
+        select: "name profile_image role",
       },
       {
         path: "answers",

@@ -3,7 +3,7 @@ const {
   searchHelper,
   populateHelper,
   questionSortHelper,
-  paginationHelper,
+  // paginationHelper,
 } = require("./queryMiddlewareHelpers");
 
 const questionQueryMiddleware = function (model, options) {
@@ -21,18 +21,18 @@ const questionQueryMiddleware = function (model, options) {
     query = questionSortHelper(query, req);
 
     // Pagination
-    const total = await model.countDocuments();
-    const paginationResult = await paginationHelper(total, query, req);
-    query = paginationResult.query;
+    // const total = await model.countDocuments();
+    // const paginationResult = await paginationHelper(total, query, req);
+    // query = paginationResult.query;
 
-    const pagination = paginationResult.pagination;
+    // const pagination = paginationResult.pagination;
 
     const queryResults = await query;
 
     res.queryResults = {
       success: true,
       count: queryResults.length,
-      pagination: pagination,
+      // pagination: pagination,
       data: queryResults,
     };
     next();
