@@ -41,7 +41,7 @@ const getSingleAnswer = asyncErrorWrapper(async (req, res, next) => {
     })
     .populate({
       path: "user",
-      select: "name profile_image",
+      select: "name profile_image role",
     });
 
   return res.status(200).json({
