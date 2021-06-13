@@ -21,8 +21,11 @@ const addNewAnswerToQuestion = asyncErrorWrapper(async (req, res, next) => {
 
 const getAllAnswersByQuestion = asyncErrorWrapper(async (req, res, next) => {
   const { question_id } = req.params;
+
   const question = await Question.findById(question_id).populate("answers");
+
   const answers = question.answers;
+
   return res.status(200).json({
     success: true,
     count: answers.length,
@@ -36,14 +39,13 @@ const getSingleAnswer = asyncErrorWrapper(async (req, res, next) => {
   //   ! istediğimiz bilgileri getirme
   const answer = await Answer.findById(answer_id)
     .populate({
-      path: "question",
-      select: "title",
-    })
-    .populate({
       path: "user",
       select: "name profile_image role",
+    })
+    .populate({
+      path: "question",
+      select: "title",
     });
-
   return res.status(200).json({
     success: true,
     data: answer,

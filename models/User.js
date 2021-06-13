@@ -55,6 +55,9 @@ const UserSchema = new Schema({
   place: {
     type: String,
   },
+  tffnumber: {
+    type: Number,
+  },
   website: {
     type: String,
   },
